@@ -46,7 +46,7 @@ namespace Linq_7
             var soldierPlatoonTwo = from soldier in _soldiersOne where soldier.Name[firstSymbol] == 'Б' select soldier;
             var soldierPlatoonOne = _soldiersOne.Except(soldierPlatoonTwo);
 
-            AddSoldierToSoldierTwo(soldierPlatoonTwo.ToList());
+            AddSoldierTwo(soldierPlatoonTwo.ToList());
             ShowSoldier(_soldiersTwo);
             Console.WriteLine();
             Console.WriteLine("список солдат первой роты после перевода");
@@ -63,7 +63,7 @@ namespace Linq_7
             }
         }
 
-        private void AddSoldierToSoldierTwo(List<Soldier> soldiers)
+        private void AddSoldierTwo(List<Soldier> soldiers)
         {
             foreach (Soldier soldier in soldiers)
             {
