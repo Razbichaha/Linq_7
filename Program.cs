@@ -44,10 +44,15 @@ namespace Linq_7
 
             int firstSymbol = 0;
             var soldierPlatoonTwo = from soldier in _soldiersOne where soldier.Name[firstSymbol] == 'Б' select soldier;
+           soldierPlatoonTwo= _soldiersTwo.Union(soldierPlatoonTwo);
+            _soldiersTwo = soldierPlatoonTwo.ToList();
             var soldierPlatoonOne = _soldiersOne.Except(soldierPlatoonTwo);
+            _soldiersOne = soldierPlatoonOne.ToList();
 
-            AddSoldierTwo(soldierPlatoonTwo.ToList());
+
+           // AddSoldierTwo(soldierPlatoonTwo.ToList());
             ShowSoldier(_soldiersTwo);
+
             Console.WriteLine();
             Console.WriteLine("список солдат первой роты после перевода");
             Console.WriteLine();
