@@ -4,8 +4,6 @@ using System.Linq;
 
 namespace Linq_7
 {
-    //    Есть 2 списка в солдатами.
-    //Всех бойцов из отряда 1, у которых фамилия начинается на букву Б, требуется перевести в отряд 2.
     class Program
     {
         static void Main(string[] args)
@@ -31,7 +29,6 @@ namespace Linq_7
         private List<Soldier> _soldiersOne = new List<Soldier>();
         private List<Soldier> _soldiersTwo = new List<Soldier>();
 
-
         public Barracks()
         {
             GenerateBarracks();
@@ -39,7 +36,6 @@ namespace Linq_7
 
         internal void ShowSoldierData()
         {
-
             Console.WriteLine("Весь список солдат первой роты");
             ShowSoldier(_soldiersOne);
             Console.ReadLine();
