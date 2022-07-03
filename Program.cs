@@ -44,13 +44,11 @@ namespace Linq_7
 
             int firstSymbol = 0;
             var soldierPlatoonTwo = from soldier in _soldiersOne where soldier.Name[firstSymbol] == 'Б' select soldier;
-           soldierPlatoonTwo= _soldiersTwo.Union(soldierPlatoonTwo);
+            soldierPlatoonTwo = _soldiersTwo.Union(soldierPlatoonTwo);
             _soldiersTwo = soldierPlatoonTwo.ToList();
             var soldierPlatoonOne = _soldiersOne.Except(soldierPlatoonTwo);
             _soldiersOne = soldierPlatoonOne.ToList();
 
-
-           // AddSoldierTwo(soldierPlatoonTwo.ToList());
             ShowSoldier(_soldiersTwo);
 
             Console.WriteLine();
@@ -65,14 +63,6 @@ namespace Linq_7
             foreach (Soldier soldier in soldiers)
             {
                 Console.WriteLine($"Имя солдата - {soldier.Name}");
-            }
-        }
-
-        private void AddSoldierTwo(List<Soldier> soldiers)
-        {
-            foreach (Soldier soldier in soldiers)
-            {
-                _soldiersTwo.Add(soldier);
             }
         }
 
